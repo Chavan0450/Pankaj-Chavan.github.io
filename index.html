@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pankaj | Professional Portfolio</title>
+
+  <style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f7fa;
+      color: #333;
+      transition: 0.3s;
+    }
+    .dark-mode {
+      background: #1e1e1e;
+      color: #eaeaea;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background: linear-gradient(135deg, #0d47a1, #1565c0);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 20px;
+      animation: popIn 1.5s ease;
+    }
+    @keyframes popIn {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* ---------- NAVIGATION ---------- */
+    nav {
+      background: #ffffff;
+      padding: 15px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 18px;
+      color: #0d47a1;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #1565c0; }
+
+    /* ---------- SECTIONS ---------- */
+    .section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      border-left: 5px solid #0d47a1;
+      animation: slideUp 1s ease;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 { color: #0d47a1; }
+    .dark-mode h2 { color: #4da3ff; }
+
+
+    /* ---------- PROJECT GRID ---------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-card-content {
+      padding: 20px;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .resume-button, 
+    .view-btn, 
+    .download-btn {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #0d47a1;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    .resume-button:hover,
+    .view-btn:hover,
+    .download-btn:hover {
+      background: #1565c0;
+    }
+
+    /* ---------- DARK MODE SWITCH ---------- */
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #0d47a1;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      z-index: 10000;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0d47a1;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DARK MODE BUTTON -->
+  <div class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</div>
+
+  <!-- HEADER -->
+  <header>
+    <img src="PassPhoto.jpg" alt="Profile Photo" />
+    <h1>Pankaj Chavan</h1>
+    <p>Data Analyst & Data Engineer | Python • SQL • Power BI • Big Data</p>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#github">GitHub</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ABOUT SECTION -->
+  <section class="section" id="about">
+    <div class="card">
+      <h2>About Me</h2>
+      <p>I hold a B.E. in Computer Science and have completed a Post Graduate Diploma in Business Data Analytics 
+        (PG-DBDA), which has provided me with a strong foundation in programming, data analysis, 
+        and business analytics. Throughout my academic journey, I have developed a deep understanding of 
+        data structures, algorithms, statistical analysis, and data-driven decision-making. 
+        My education has been complemented by hands-on projects that involved data cleaning, 
+        transformation, visualization, and building ETL pipelines, enabling me to apply theoretical knowledge 
+        to practical, real-world problems.</p>
+    <p> Professionally, I am skilled in Python, SQL (MySQL & PostgreSQL), PySpark, and Power BI, and 
+        have experience in data modeling, analytics workflows, and developing actionable insights. 
+        I am passionate about leveraging emerging technologies, advanced computational methods, 
+        and innovative solutions to solve complex business challenges and optimize processes. 
+        I thrive on turning raw data into meaningful insights that support strategic decision-making. 
+        Continuously learning and growing in the field of data and analytics, 
+        I aim to contribute to impactful projects, deliver high-quality solutions, and create value for
+         organizations through a combination of technical expertise and analytical thinking.</p> 
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+  <div class="card">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Programming & Scripting:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn), SQL (MySQL, PostgreSQL), Shell Scripting, Basic R Programming</li>
+      <li><strong>Data Engineering & Big Data:</strong> ETL Pipeline Design, PySpark, Data Warehousing Concepts, Data Modeling, Data Cleaning & Transformation</li>
+      <li><strong>Business Intelligence & Visualization:</strong> Power BI, Tableau, Advanced Excel (Pivot Tables, Power Query, Macros), Interactive Dashboard Design</li>
+      <li><strong>Machine Learning & Analytics:</strong> Regression, Classification, Clustering, Feature Engineering, Model Evaluation & Validation</li>
+      <li><strong>Version Control & Collaboration:</strong> Git, GitHub, Agile Methodologies, Jira (issue tracking), Team Collaboration Practices</li>
+      <li><strong>Cloud & Tools:</strong> Basic AWS (S3, EC2), Jupyter Notebook, VS Code, Anaconda, Command Line Tools</li>
+    </ul>
+  </div>
+</section>
+
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+  <div class="card">
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        
+        <div class="project-card-content">
+          <h3>Personalized Financial Advisor</h3>
+          <p>
+            Developed an intelligent financial advisory system using Python, PySpark, and Flask that provides
+            real-time spending alerts, personalized savings recommendations, and predictive insights.
+          </p>
+          <p>
+            • Overspending Detection: The system monitors transactions and raises alerts when spending exceeds
+            tailored thresholds, reducing unnecessary expenditure by <strong>25%</strong>.<br>
+            • Predictive Modeling: Built classification and regression models to forecast savings potential,
+            achieving ~<strong>85% prediction accuracy</strong>.<br>
+            • Interactive Dashboards: Designed Power BI dashboards to visualize spending behavior and savings
+            trends; user engagement increased by <strong>30%</strong>.<br>
+            • User Impact: Supported long-term savings; customers improved their adherence to savings goals by
+            <strong>20%</strong> within three months.
+          </p>
+          <p><strong>Technologies used:</strong> Python, PySpark, Flask, Azure, Power BI, Machine Learning</p>
+          <a class="view-btn" href="#">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        
+        <div class="project-card-content">
+          <h3>Player Performance Analytics – Best XI</h3>
+          <p>
+            Designed a data analytics solution to identify the best-performing cricket team (“Best XI”) based on match
+            data and player statistics. Built a data pipeline to scrape and analyze historical performance data.
+          </p>
+          <p>
+            • Data Pipeline: Scraped data from 45+ cricket matches and more than 300 player profiles using Bright Data,
+            then processed it with Python (Pandas, NumPy).<br>
+            • Performance Metrics: Evaluated strike rate, bowling economy, and match-impact to pick the top XI players,
+            achieving <strong>90% alignment</strong> with official ICC top performers.<br>
+            • Interactive Dashboard: Created a Power BI dashboard with 10+ visuals to show top scorers, wicket-takers,
+            and match‑winning contributions for strategic team selection.
+          </p>
+          <p><strong>Technologies used:</strong> Python, Pandas, NumPy, Power BI</p>
+          <a class="view-btn" href="#">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        
+        <div class="project-card-content">
+          <h3>Customer Behavior & Order Trends Analytics</h3>
+          <p>
+            Created a comprehensive Power BI solution to analyze order trends, customer behavior, and key performance
+            metrics for an e-commerce or retail business.
+          </p>
+          <p>
+            • Dashboard Development: Built a dynamic Power BI dashboard that processes 10,000+ orders, visualizing daily
+            and weekly trends, product popularity, and purchase cycles.<br>
+            • Insight Extraction: Highlighted a <strong>35% spike in weekend sales</strong> and identified top products
+            contributing to over <strong>40% of total revenue</strong>.<br>
+            • Enhanced UX: Leveraged DAX calculations, slicers, and drill-down visuals to provide interactive and
+            actionable insights for business stakeholders.
+          </p>
+          <p><strong>Technologies used:</strong> Power BI, DAX, Power Query</p>
+          <a class="view-btn" href="#">View Project</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- RESUME SECTION -->
+  <section class="section" id="resume">
+    <div class="card">
+      <h2>Download My Resume</h2>
+      <p>Click below to download the latest copy of my resume:</p>
+      <a href="resume.pdf" download class="download-btn">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- GITHUB SECTION -->
+<!-- GITHUB / PROJECTS ON GITHUB SECTION -->
+<!-- GITHUB / PROJECTS ON GITHUB SECTION -->
+<section class="section" id="github">
+  <div class="card">
+    <h2>GitHub Projects</h2>
+    <p>Here are some of my notable GitHub repositories — including legacy or archived projects that highlight my work and learning journey:</p>
+    <ul>
+      <li>
+        <a href="https://github.com/yourusername/personal-financial-advisor" target="_blank" rel="noopener noreferrer">
+          Personalized Financial Advisor
+        </a>: A Flask-based intelligent advisor that issues real‑time spending alerts, predicts savings using ML models (85% accuracy), and visualizes insights via Power BI.<br>
+        <strong>Technologies used:</strong> Python, Machine Learning, PySpark, Flask, Azure, Power BI
+      </li>
+      <li>
+        <a href="https://github.com/yourusername/player-performance-analytics" target="_blank" rel="noopener noreferrer">
+          Player Performance Analytics – Best XI
+        </a>: A data pipeline that scrapes cricket match and player data, analyses performance with Python (Pandas, NumPy), and displays interactive dashboards in Power BI.<br>
+        <strong>Technologies used:</strong> Python, Pandas, NumPy, Power BI, Web Scraping
+      </li>
+      <li>
+        <a href="https://github.com/yourusername/customer-behavior-order-trends" target="_blank" rel="noopener noreferrer">
+          Customer Behavior & Order Trends Dashboard
+        </a>: A Power BI dashboard built with DAX and Power Query to analyze 10,000+ orders, reveal weekend sales spikes (~35%), and highlight top-revenue products.<br>
+        <strong>Technologies used:</strong> Power BI, DAX, Power Query, Data Visualization
+      </li>
+    </ul>
+    <p>Want to explore more? Visit my <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub profile</a> where I share all my repositories, including experimental and archived projects.</p>
+  </div>
+</section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section" id="contact">
+  <div class="card">
+    <h2>Contact Me</h2>
+    <p>
+      <a class="contact-link email" href="mailto:yourmail@example.com">pankajchavan4005@gmail.com</a><br>
+      <a class="contact-link linkedin" href="www.linkedin.com/in/p-chavan">LinkedIn Profile</a><br>
+      <a class="contact-link phone" href="tel:+911234567890">+91 9011264005</a>
+    </p>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Pankaj | All Rights Reserved</p>
+  </footer>
+
+  <!-- DARK MODE SCRIPT -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
+</html>
